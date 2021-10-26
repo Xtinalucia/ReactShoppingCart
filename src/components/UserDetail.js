@@ -9,3 +9,4 @@ export default class UserDetail extends Component {
         )//how you will display the data on your page
     }
 }
+
