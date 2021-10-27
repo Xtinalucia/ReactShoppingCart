@@ -5,6 +5,7 @@ import Home from './views/Home';
 import { Route } from 'react-router-dom';
 import Racers from './views/Racers';
 import Users from './views/Users';
+import Posts from './views/Posts';
 
 // you can only return a single parent element which is the div here
 
@@ -14,7 +15,7 @@ export default class App extends Component {
     super(props);
     this.state = {
     count: 0,
-    name: 'Brian'
+    name: 'Lucy'
   };
 };
   handleClick = (step) => {
@@ -45,7 +46,9 @@ export default class App extends Component {
         <Route exact path='/Users'>
           <Users />
         </Route>
-
+        <Route exact path='/Posts'>
+          <Posts />
+        </Route>
       </div>
       </>
     )

@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 
 export default class RacerDetail extends Component {
     render() {
+        const racer  = this.props.racer
         return (
-            <div>
-                <h4>{this.props.racer.Driver.givenName} {this.props.racer.Driver.familyName} - {this.props.racer.points}</h4>
-            </div>
+            <tr>
+                <td>{racer.Driver.givenName} {racer.Driver.familyName} - {racer.points}</td>
+            </tr>
         )
     }
 }
