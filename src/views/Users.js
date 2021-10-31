@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import UserDetail from '../components/UserDetail';
 
-export default class Users extends Component {
+export default class users extends Component {
     constructor(props){
         super(props);
         console.log('Users component constructed, start w/empty array')
         this.state = {
-            Users: []
+            users: []
         }
     }
 
     componentDidMount(){
         console.log('Users component did mount on  the DOM, reset the state')
-        fetch('https://kekambas-bs.herokuapp.com/kekambas')//fetch from api promise base then response
+        fetch('https://kekambas-bs.herokuapp.com/api/users')//fetch from api promise base then response
             .then(res => res.json())//run func res.json() turns into data on nxt ln
             .then(data => this.setState({//obj is users
                 Users: data
@@ -24,8 +24,9 @@ export default class Users extends Component {
         console.log(this.state)
         return (
             <div>
-                These are the Kekambas-72:
-                {this.state.Users.map((u, i) => <UserDetail key={i} User={u} />)}
+                Our Products:
+                
+                {this.state.users.map((u, i) => <UserDetail key={i} User={u} />)}
             </div>//map over users and return user detail  components
         )
     }

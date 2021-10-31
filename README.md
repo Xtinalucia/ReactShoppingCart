@@ -68,3 +68,149 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+FROM : Posts.js
+
+
+
+
+
+
+
+<!-- // }
+//             return(
+//                  <div key ={p.id} className="card my-3">
+//                  <div className="card-header"> 
+//                      {p.title}
+//                  </div>
+//                  <div className="card-body"></div>
+//                  <blockquote className="blockquote mb-"></blockquote>
+//                  </div>
+     
+    // ) -->
+
+
+
+
+
+
+    // render() {
+    //     console.log('Posts component rendered, render students names')
+    //     console.log(this.state)
+
+
+
+    //     return (
+    //         <div>
+    //             These are Kekambas-72 posts:
+    //             {posts.map((p => }
+    //         </div>//map over Posts and return user detail  components
+    //     )
+    
+    //      return(
+    //          <div key ={p.id} className="card my-3">
+    //          <div className="card-header"> 
+    //                {p.title}
+    //          </div>
+    //          <div className="card-body"></div>
+    //          <blockquote className="blockquote mb-"
+    //     </div>
+    // )
+    
+    // constructor(props){
+    //     super(props);
+    //     console.log('Posts component constructed, start w/empty array')
+    //     this.state = {
+    //         Posts: []
+    //     }
+    // }
+
+    // componentDidMount(){
+    //     console.log('Posts component did mount on  the DOM, reset the state')
+    //     fetch('https://kekambas-bs.herokuapp.com/posts')//fetch from api promise base then response
+    //         .then(res => res.json())//run func res.json() turns into data on nxt ln
+    //         .then(data => this.setState({//obj is Posts
+    //             Posts: data
+    //         }))
+    // }
+
+// display the posts by using this API endpoint*: https://kekambas-bs.herokuapp.com/posts.
+// Use the useState and useEffect hooks on your function component(s)..
+
+
+
+
+
+Taken from App.js: 
+
+
+// export default App;
+    
+
+// import React, { Component } from 'react';
+// import Navbar from './components/Navbar';
+// import About from './views/About';
+// import Home from './views/Home';
+// import { Route } from 'react-router-dom';
+// import Racers from './views/Racers';
+// import Users from './views/Users';
+// import Posts from './views/Posts';
+
+// // you can only return a single parent element which is the div here
+
+// // function App() {   //ln 4 and 7 make this show on UI. //
+// export default class App extends Component {
+//   constructor(props){
+//     super(props);
+//     this.state = {
+//     count: 0,
+//     name: 'Lucy'
+//   };
+// };
+//   handleClick = (step) => {
+//     let newCount = this.state.count + step
+//     this.setState({
+//         count: newCount
+//     })
+//   }
+//   changeName = (name) => {
+//       this.setState({
+//           name
+//       })
+//   }
+//   render() {
+//     return (
+//       <>
+<!-- //       <Navbar />
+//       <div className='container'>
+//         <Route exact path='/'>
+//         <Home count={this.state.count} handleClick={this.handleClick} name={this.state.name} changeName={this.changeName}/>
+//         </Route>
+//         <Route exact path='/about'>
+//           <About />
+//         </Route>
+//         <Route exact path='/racers'>
+//           <Racers />
+//         </Route>
+//         <Route exact path='/Users'>
+//           <Users />
+//         </Route>
+//         <Route exact path='/Posts'>
+//           <Posts />
+//         </Route>
+//       </div>
+//       </>
+//     )
+//   }
+// }
+
+
+// // class App extends React.Component{
+// //   render(){
+// //     return <h1> hi there from the class</h1>
+// //   }
+// // }
+// // above shows that the class can display on UI, use ln 1 as well -->
