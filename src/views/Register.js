@@ -11,7 +11,7 @@ export default class Register extends Component {
 
     handleSubmit = (e) =>{
         e.preventDefault();
-        console.log('Form Submitted!')
+        
 
         let myHeaders = new Headers();
         myHeaders.append('Content-Type', 'application/json')
@@ -38,7 +38,7 @@ export default class Register extends Component {
             .then(data => {
                 console.log(data)
                 this.setState({
-                    redirect: '/users'
+                    redirect: '/login'
                 })
             })
             .catch(err => console.error(err))

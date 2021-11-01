@@ -3,19 +3,17 @@ import { Route } from 'react-router-dom'
 import Navbar from './components/Navbar';
 import Home from './views/Home';
 import Cart from './views/Cart';
-import { Login } from './components/Login';
-import products from './views/products';
-import {
-  BrowserRouter as 
-  Switch,
-} from "react-router-dom";
+
+import Register from './views/Register';
+import { Login } from './views/Login';
+import Products from './views/products';
+
 
 export default class App extends Component {
   constructor(props){
     super(props);
     this.state = {
       count: 0,
-      // name: 'Lucy',
       loggedIn: localStorage.getItem('token'),
       userId: localStorage.getItem('userId'),
       cart: []
@@ -23,20 +21,7 @@ export default class App extends Component {
     };
   };
 
-  handleClick = (step) => {
-    let newCount = this.state.count + step
-    this.setState({
-        count: newCount
-    })
-  }
-
-  changeName = (name) => {
-    //   const name = prompt('What is your name?');
-      this.setState({
-          name
-      })
-  }
-
+ 
   logOut = () =>{
     localStorage.removeItem('token');
     this.setState({
@@ -54,7 +39,7 @@ export default class App extends Component {
     
     fetch('https://kekambas-bs.herokuapp.com/api/users', {
         method: 'POST',
-        headers: myHeaders
+        
     }).then(res => res.json())
         .then(data => {
             localStorage.setItem('token', data['token'])
@@ -68,30 +53,37 @@ export default class App extends Component {
   }
 
 
-  addToCart = (product) => {
-    this.setState(state => {return {cart: this.state.cart.concat([product])}});
+  addToCart = (products) => {
+    this.setState(state => {return {cart: this.state.cart.concat([products])}});
   }
 
   render() {
     return (
-      <div> 
-        <Navbar number={this.state.cart.length}></Navbar>
-        <div className="row">
-            <div className="col-12 my-3">
-            </div>
-            </div>
-        <div className="container">
-        
-        <Switch>
-          <Route path="https://kekambas-bs.herokuapp.com/api/products" component={products} />
-          <Route exact path="/" component={Home} />
-          <Route path="/Login" component={Login} />
-          <Route path="/Cart" component={Cart} />
-        </Switch>
+      <>
+        <Navbar loggedIn={this.state.loggedIn} logOut={this.logOut}/>
+        <div className='container'>
+            <Route exact path='/'>
+                <Home />
+            </Route>
+            <Route exact path='/Cart'>
+                <Cart />
+            </Route>
+            <Route exact path='/Login'>
+                <Login />
+            </Route>
+            <Route exact path='/products'>
+                <Products />
+            </Route>
+            <Route exact path='/Register'>
+                <Register />
+            </Route>
+
         </div>
-      </div>
-    );
-  }}
+      </>
+    )
+  }
+}
+
 
  
   // Switch is unique in that it renders a route exclusively. 

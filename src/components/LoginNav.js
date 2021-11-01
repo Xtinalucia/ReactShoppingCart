@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export function Login(props){
+export function LoginNav(props){
 
     return (
         <React.Fragment>

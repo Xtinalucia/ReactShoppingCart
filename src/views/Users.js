@@ -11,7 +11,6 @@ export default class users extends Component {
     }
 
     componentDidMount(){
-        console.log('Users component did mount on  the DOM, reset the state')
         fetch('https://kekambas-bs.herokuapp.com/api/users')//fetch from api promise base then response
             .then(res => res.json())//run func res.json() turns into data on nxt ln
             .then(data => this.setState({//obj is users
@@ -20,11 +19,10 @@ export default class users extends Component {
     }
 
     render() {
-        console.log('Users component rendered, render students names')
         console.log(this.state)
         return (
             <div>
-                Our Products:
+                
                 
                 {this.state.users.map((u, i) => <UserDetail key={i} User={u} />)}
             </div>//map over users and return user detail  components
